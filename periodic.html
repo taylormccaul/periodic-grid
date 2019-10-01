@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Periodic Table With CSS Grid</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            #grid-container {
+                display: grid;
+                min-width: 100vw;
+                max-width: 100vw;
+                min-height: 100vh;
+                max-height: 100vh;
+                background-color: gray;
+                grid-template-columns: repeat(18, 1fr);
+                grid-template-rows: repeat(7, 1fr);
+            }
+
+            .grid-divs {
+                background-color: blue;
+            }
+
+            .alkali {
+                background-color: #e74c3c;
+            }
+
+            .alkaline {
+                background-color: #eb984e;
+            }
+
+            .tran-metal {
+                background-color: #ffee58;
+            }
+
+            .basic-metal {
+                background-color: #9ccc65;
+            }
+            
+            .metalloid {
+                background-color: #82e0aa;
+            }
+
+            .non-metal {
+                background-color: #5dade2;
+            }
+
+            .halo {
+                background-color: #5c6bc0;
+            }
+
+            .noble {
+                background-color: #9575cd;
+            }
+
+            .lanthan {
+                background-color: #fadbd8;
+            }
+
+            .actin {
+                background-color: #f2d7d5;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grid-container">
+        </div>
+        <script>
+            let grid = document.querySelector('#grid-container');
+            for (let i = 0; i < 126; i++) {
+                let gridDiv = document.createElement('div');
+                gridDiv.classList.add('grid-divs');
+                gridDiv.id = `elem-${i}`;
+                gridDiv.innerHTML = `${i}`;
+                grid.appendChild(gridDiv);
+                if (i > 0 && i < 17 || i > 19 && i < 30 || i > 37 && i < 48) {
+                    gridDiv.style.backgroundColor = 'white';
+                    gridDiv.innerHTML = "";
+                }
+            }
+            document.getElementById('elem-17').style.backgroundColor = 'red';
+        </script>
+    </body>
+</html>
