@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Periodic Table With CSS Grid</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat|Oswald&display=swap" rel="stylesheet">
         <style>
             html, body {
                 margin: 0;
@@ -58,11 +59,11 @@
             }
 
             .lanthan {
-                background-color: #fadbd8;
+                background-color: #f5b7b1;
             }
 
             .actin {
-                background-color: #f2d7d5;
+                background-color: #f48fb1;
             }
         </style>
     </head>
@@ -73,31 +74,44 @@
             let grid = document.querySelector('#grid-container');
             let alkalis = [18, 36, 54, 72, 90, 108];
             let alkalines = [19, 37, 55, 73, 91, 109];
-            let transitions;
-            let basics;
-            let metalloids;
+            let transitions = [56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 93, 94, 95,
+            96, 97, 98, 99, 100, 101, 111, 112, 113, 114, 115, 116, 117, 118, 119];
+            let basics = [48, 66, 84, 85, 102, 103, 104, 120, 121, 122, 123];
+            let metalloids = [30, 49, 67, 68, 86, 87, 105];
             let nonmetals = [0, 31, 32, 33, 50, 51, 69];
-            let halos;
-            let nobles;
-            let lanthans;
-            let actins;
+            let halos = [34, 52, 70, 88, 106, 124];
+            let nobles = [17, 35, 53, 71, 89, 107, 125];
+            let lanthans = [92];
+            let actins = [110];
             for (let i = 0; i < 126; i++) {
-                let gridDiv = document.createElement('div');
-                gridDiv.classList.add('grid-divs');
-                gridDiv.id = `elem-${i}`;
-                gridDiv.innerHTML = `${i}`;
-                grid.appendChild(gridDiv);
+                let elements = document.createElement('div');
+                elements.classList.add('grid-divs');
+                elements.id = `elem-${i}`;
+                elements.innerHTML = `${i}`;
+                grid.appendChild(elements);
                 if (i > 0 && i < 17 || i > 19 && i < 30 || i > 37 && i < 48) {
-                    gridDiv.style.backgroundColor = 'white';
-                    gridDiv.innerHTML = "";
+                    elements.style.backgroundColor = 'white';
+                    elements.innerHTML = "";
                 } else if (alkalis.includes(i)) {
-                    gridDiv.classList.add('alkali');
+                    elements.classList.add('alkali');
                 } else if (alkalines.includes(i)) {
-                    gridDiv.classList.add('alkaline');
+                    elements.classList.add('alkaline');
                 } else if (transitions.includes(i)) {
-                    gridDiv.classList.add('tran-metal');
+                    elements.classList.add('tran-metal');
+                } else if (basics.includes(i)) {
+                    elements.classList.add('basic-metal');
+                } else if (metalloids.includes(i)) {
+                    elements.classList.add('metalloid');
                 } else if (nonmetals.includes(i)) {
-                    gridDiv.classList.add('non-metal');
+                    elements.classList.add('non-metal');
+                } else if (halos.includes(i)) {
+                    elements.classList.add('halo');
+                } else if (nobles.includes(i)) {
+                    elements.classList.add('noble');
+                } else if (lanthans.includes(i)) {
+                    elements.classList.add('lanthan');
+                } else if (actins.includes(i)) {
+                    elements.classList.add('actin');
                 }
             }
         </script>
