@@ -80,12 +80,12 @@
                 if (i > 0 && i < 17 || i > 19 && i < 30 || i > 37 && i < 48) {
                     gridDiv.style.backgroundColor = 'white';
                     gridDiv.innerHTML = "";
-                } else if (i === 0 | i === 31 | i === 32 | i === 33 | i === 50 | i === 51 | i === 69) {
+                } else if (i === 18 || i === 36 || i === 54 || i === 72 || i === 90 || i === 108) {
+                    gridDiv.classList.add('alkali');
+                } else if (i === 0 || i === 31 || i === 32 || i === 33 || i === 50 || i === 51 || i === 69) {
                     gridDiv.classList.add('non-metal');
                 }
             }
-            
-            document.getElementById('elem-17').style.backgroundColor = 'red';
         </script>
     </body>
 </html>
