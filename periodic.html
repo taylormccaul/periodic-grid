@@ -71,6 +71,16 @@
         </div>
         <script>
             let grid = document.querySelector('#grid-container');
+            let alkalis = [18, 36, 54, 72, 90, 108];
+            let alkalines = [19, 37, 55, 73, 91, 109];
+            let transitions;
+            let basics;
+            let metalloids;
+            let nonmetals = [0, 31, 32, 33, 50, 51, 69];
+            let halos;
+            let nobles;
+            let lanthans;
+            let actins;
             for (let i = 0; i < 126; i++) {
                 let gridDiv = document.createElement('div');
                 gridDiv.classList.add('grid-divs');
@@ -80,9 +90,13 @@
                 if (i > 0 && i < 17 || i > 19 && i < 30 || i > 37 && i < 48) {
                     gridDiv.style.backgroundColor = 'white';
                     gridDiv.innerHTML = "";
-                } else if (i === 18 || i === 36 || i === 54 || i === 72 || i === 90 || i === 108) {
+                } else if (alkalis.includes(i)) {
                     gridDiv.classList.add('alkali');
-                } else if (i === 0 || i === 31 || i === 32 || i === 33 || i === 50 || i === 51 || i === 69) {
+                } else if (alkalines.includes(i)) {
+                    gridDiv.classList.add('alkaline');
+                } else if (transitions.includes(i)) {
+                    gridDiv.classList.add('tran-metal');
+                } else if (nonmetals.includes(i)) {
                     gridDiv.classList.add('non-metal');
                 }
             }
