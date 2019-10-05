@@ -13,17 +13,24 @@
 
             #grid-container {
                 display: grid;
-                min-width: 100vw;
+                min-width: 95vw;
                 max-width: 100vw;
-                min-height: 100vh;
+                min-height: 95vh;
                 max-height: 100vh;
-                background-color: gray;
+                background-color: white;
                 grid-template-columns: repeat(18, 1fr);
                 grid-template-rows: repeat(7, 1fr);
+                grid-gap: 2px;
+                box-sizing: border-box;
+            }
+
+            h2 {
+                font-family: 'Oswald', sans-serif;
             }
 
             .grid-divs {
-                background-color: blue;
+                text-align: center;
+                box-sizing: border-box;
             }
 
             .alkali {
@@ -65,17 +72,25 @@
             .actin {
                 background-color: #f48fb1;
             }
+
+            .atom-num {
+                float: left;
+                margin-top: 0.3em;
+                margin-left: 0.5em;
+                margin-right: -0.7em;
+                font-family: 'Montserrat', sans-serif;
+            }
         </style>
     </head>
     <body>
-        <div id="grid-container">
-        </div>
+        <div id="grid-container"></div>
         <script>
             let grid = document.querySelector('#grid-container');
             let alkalis = [18, 36, 54, 72, 90, 108];
             let alkalines = [19, 37, 55, 73, 91, 109];
-            let transitions = [56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 93, 94, 95,
-            96, 97, 98, 99, 100, 101, 111, 112, 113, 114, 115, 116, 117, 118, 119];
+            let transitions = [56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 74, 75, 76, 
+            77, 78, 79, 80, 81, 82, 83, 93, 94, 95, 96, 97, 98, 99, 100, 101, 
+            111, 112, 113, 114, 115, 116, 117, 118, 119];
             let basics = [48, 66, 84, 85, 102, 103, 104, 120, 121, 122, 123];
             let metalloids = [30, 49, 67, 68, 86, 87, 105];
             let nonmetals = [0, 31, 32, 33, 50, 51, 69];
@@ -83,12 +98,14 @@
             let nobles = [17, 35, 53, 71, 89, 107, 125];
             let lanthans = [92];
             let actins = [110];
+            
             for (let i = 0; i < 126; i++) {
                 let elements = document.createElement('div');
                 elements.classList.add('grid-divs');
                 elements.id = `elem-${i}`;
                 elements.innerHTML = `${i}`;
                 grid.appendChild(elements);
+
                 if (i > 0 && i < 17 || i > 19 && i < 30 || i > 37 && i < 48) {
                     elements.style.backgroundColor = 'white';
                     elements.innerHTML = "";
@@ -110,10 +127,294 @@
                     elements.classList.add('noble');
                 } else if (lanthans.includes(i)) {
                     elements.classList.add('lanthan');
-                } else if (actins.includes(i)) {
+                } else {
                     elements.classList.add('actin');
                 }
             }
+                let H = document.getElementById('elem-0');
+                H.innerHTML = `<p class="atom-num">1</p>
+                <h2>H</h2>`;
+
+                //Alkalis
+                let Li = document.getElementById('elem-18');
+                Li.innerHTML = `<p class="atom-num">1</p>
+                <h2>Li</h2>`;
+                let Na = document.getElementById('elem-36');
+                Na.innerHTML = `<p class="atom-num">1</p>
+                <h2>Na</h2>`
+                let K = document.getElementById('elem-54');
+                K.innerHTML = `<p class="atom-num">1</p>
+                <h2>K</h2>`
+                let Rb = document.getElementById('elem-72');
+                Rb.innerHTML = `<p class="atom-num">1</p>
+                <h2>Rb<h2>`
+                let Cs = document.getElementById('elem-90');
+                Cs.innerHTML = `<p class="atom-num">1</p>
+                <h2>Cs</h2>`
+                let Fr = document.getElementById('elem-108');
+                Fr.innerHTML = `<p class="atom-num">1</p>
+                <h2>Fr</h2>`
+
+                //Alkalines
+                let Be = document.getElementById('elem-19');
+                Be.innerHTML = `<p class="atom-num">1</p>
+                <h2>Be</h2>`
+                let Mg = document.getElementById('elem-37');
+                Mg.innerHTML = `<p class="atom-num">1</p>
+                <h2>Mg</h2>`
+                let Ca = document.getElementById('elem-55');
+                Ca.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ca</h2>`
+                let Sr = document.getElementById('elem-73');
+                Sr.innerHTML = `<p class="atom-num">1</p>
+                <h2>Sr</h2>`
+                let Ba = document.getElementById('elem-91');
+                Ba.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ba</h2>`
+                let Ra = document.getElementById('elem-109');
+                Ra.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ra</h2>`
+
+                //Transition Metals
+                let Sc = document.getElementById('elem-56');
+                Sc.innerHTML = `<p class="atom-num">1</p>
+                <h2>Sc</h2>`
+                let Ti = document.getElementById('elem-57');
+                Ti.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ti</h2>`
+                let V = document.getElementById('elem-58');
+                V.innerHTML = `<p class="atom-num">1</p>
+                <h2>V</h2>`
+                let Cr = document.getElementById('elem-59');
+                Cr.innerHTML = `<p class="atom-num">1</p>
+                <h2>Cr</h2>`
+                let Mn = document.getElementById('elem-60');
+                Mn.innerHTML = `<p class="atom-num">1</p>
+                <h2>Mn</h2>`
+                let Fe = document.getElementById('elem-61');
+                Fe.innerHTML = `<p class="atom-num">1</p>
+                <h2>Fe</h2>`
+                let Co = document.getElementById('elem-62');
+                Co.innerHTML = `<p class="atom-num">1</p>
+                <h2>Co</h2>`
+                let Ni = document.getElementById('elem-63');
+                Ni.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ni</h2>`
+                let Cu = document.getElementById('elem-64');
+                Cu.innerHTML = `<p class="atom-num">1</p>
+                <h2>Cu</h2>`
+                let Zn = document.getElementById('elem-65');
+                Zn.innerHTML = `<p class="atom-num">1</p>
+                <h2>Zn</h2>`
+
+                let Y = document.getElementById('elem-74');
+                Y.innerHTML = `<p class="atom-num">1</p>
+                <h2>Y</h2>`
+                let Zr = document.getElementById('elem-75');
+                Zr.innerHTML = `<p class="atom-num">1</p>
+                <h2>Zr</h2>`
+                let Nb = document.getElementById('elem-76');
+                Nb.innerHTML = `<p class="atom-num">1</p>
+                <h2>Nb</h2>`
+                let Mo = document.getElementById('elem-77');
+                Mo.innerHTML = `<p class="atom-num">1</p>
+                <h2>Mo</h2>`
+                let Tc = document.getElementById('elem-78');
+                Tc.innerHTML = `<p class="atom-num">1</p>
+                <h2>Tc</h2>`
+                let Ru = document.getElementById('elem-79');
+                Ru.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ru</h2>`
+                let Rh = document.getElementById('elem-80');
+                Rh.innerHTML = `<p class="atom-num">1</p>
+                <h2>Rh</h2>`
+                let Pd = document.getElementById('elem-81');
+                Pd.innerHTML = `<p class="atom-num">1</p>
+                <h2>Pd</h2>`
+                let Ag = document.getElementById('elem-82');
+                Ag.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ag</h2>`
+                let Cd = document.getElementById('elem-83');
+                Cd.innerHTML = `<p class="atom-num">1</p>
+                <h2>Cd</h2>`
+
+                let Hf = document.getElementById('elem-93');
+                Hf.innerHTML = `<p class="atom-num">1</p>
+                <h2>Hf</h2>`
+                let Ta = document.getElementById('elem-94');
+                Ta.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ta</h2>`
+                let W = document.getElementById('elem-95');
+                W.innerHTML = `<p class="atom-num">1</p>
+                <h2>W</h2>`
+                let Re = document.getElementById('elem-96');
+                Re.innerHTML = `<p class="atom-num">1</p>
+                <h2>Re</h2>`
+                let Os = document.getElementById('elem-97');
+                Os.innerHTML = `<p class="atom-num">1</p>
+                <h2>Os</h2>`
+                let Ir = document.getElementById('elem-98');
+                Ir.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ir</h2>`
+                let Pt = document.getElementById('elem-99');
+                Pt.innerHTML = `<p class="atom-num">1</p>
+                <h2>Pt</h2>`
+                let Au = document.getElementById('elem-100');
+                Au.innerHTML = `<p class="atom-num">1</p>
+                <h2>Au</h2>`
+                let Hg = document.getElementById('elem-101');
+                Hg.innerHTML = `<p class="atom-num">1</p>
+                <h2>Hg</h2>`
+
+                let Rf = document.getElementById('elem-111');
+                Rf.innerHTML = `<p class="atom-num">1</p>
+                <h2>Rf</h2>`
+                let Db = document.getElementById('elem-112');
+                Db.innerHTML = `<p class="atom-num">1</p>
+                <h2>Db</h2>`
+                let Sg = document.getElementById('elem-113');
+                Sg.innerHTML = `<p class="atom-num">1</p>
+                <h2>Sg</h2>`
+                let Bh = document.getElementById('elem-114');
+                Bh.innerHTML = `<p class="atom-num">1</p>
+                <h2>Bh</h2>`
+                let Hs = document.getElementById('elem-115');
+                Hs.innerHTML = `<p class="atom-num">1</p>
+                <h2>Hs</h2>`
+                let Mt = document.getElementById('elem-116');
+                Mt.innerHTML = `<p class="atom-num">1</p>
+                <h2>Mt</h2>`
+                let Ds = document.getElementById('elem-117');
+                Ds.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ds</h2>`
+                let Rg = document.getElementById('elem-118');
+                Rg.innerHTML = `<p class="atom-num">1</p>
+                <h2>Rg</h2>`
+                let Cn = document.getElementById('elem-119');
+                Cn.innerHTML = `<p class="atom-num">1</p>
+                <h2>Cn</h2>`
+
+                //Basic metals
+                let Al = document.getElementById('elem-48');
+                Al.innerHTML = `<p class="atom-num">1</p>
+                <h2>Al</h2>`
+                let Ga = document.getElementById('elem-66');
+                Ga.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ga</h2>`
+                let In = document.getElementById('elem-84');
+                In.innerHTML = `<p class="atom-num">1</p>
+                <h2>In</h2>`
+                let Sn = document.getElementById('elem-85');
+                Sn.innerHTML = `<p class="atom-num">1</p>
+                <h2>Sn</h2>`
+                let Tl = document.getElementById('elem-102');
+                Tl.innerHTML = `<p class="atom-num">1</p>
+                <h2>Tl</h2>`
+
+                let Pb = document.getElementById('elem-103');
+                Pb.innerHTML = `<p class="atom-num">1</p>
+                <h2>Pb</h2>`
+                let Bi = document.getElementById('elem-104');
+                Bi.innerHTML = `<p class="atom-num">1</p>
+                <h2>Bi</h2>`
+                let Nh = document.getElementById('elem-120');
+                Nh.innerHTML = `<p class="atom-num">1</p>
+                <h2>Nh</h2>`
+                let Fl = document.getElementById('elem-121');
+                Fl.innerHTML = `<p class="atom-num">1</p>
+                <h2>Fl</h2>`
+                let Mc = document.getElementById('elem-122');
+                Mc.innerHTML = `<p class="atom-num">1</p>
+                <h2>Mc</h2>`
+                let Lv = document.getElementById('elem-123');
+                Lv.innerHTML = `<p class="atom-num">1</p>
+                <h2>Lv</h2>`
+
+                //Metalloids
+                let B = document.getElementById('elem-30');
+                B.innerHTML = `<p class="atom-num">1</p>
+                <h2>B</h2>`
+                let Si = document.getElementById('elem-49');
+                Si.innerHTML = `<p class="atom-num">1</p>
+                <h2>Si</h2>`
+                let Ge = document.getElementById('elem-67');
+                Ge.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ge</h2>`
+                let As = document.getElementById('elem-68');
+                As.innerHTML = `<p class="atom-num">1</p>
+                <h2>As</h2>`
+                let Sb = document.getElementById('elem-86');
+                Sb.innerHTML = `<p class="atom-num">1</p>
+                <h2>Sb</h2>`
+                let Te = document.getElementById('elem-87');
+                Te.innerHTML = `<p class="atom-num">1</p>
+                <h2>Te</h2>`
+                let Po = document.getElementById('elem-105');
+                Po.innerHTML = `<p class="atom-num">1</p>
+                <h2>Po</h2>`
+
+                //Non-metals
+                let C = document.getElementById('elem-31');
+                C.innerHTML = `<p class="atom-num">1</p>
+                <h2>C</h2>`
+                let N = document.getElementById('elem-32');
+                N.innerHTML = `<p class="atom-num">1</p>
+                <h2>N</h2>`
+                let O = document.getElementById('elem-33');
+                O.innerHTML = `<p class="atom-num">1</p>
+                <h2>O</h2>`
+                let P = document.getElementById('elem-50');
+                P.innerHTML = `<p class="atom-num">1</p>
+                <h2>P</h2>`
+                let S = document.getElementById('elem-51');
+                S.innerHTML = `<p class="atom-num">1</p>
+                <h2>S</h2>`
+                let Se = document.getElementById('elem-69');
+                Se.innerHTML = `<p class="atom-num">1</p>
+                <h2>Se</h2>`
+
+                //Halogens
+                let F = document.getElementById('elem-34');
+                F.innerHTML = `<p class="atom-num">1</p>
+                <h2>F</h2>`
+                let Cl = document.getElementById('elem-52');
+                Cl.innerHTML = `<p class="atom-num">1</p>
+                <h2>Cl</h2>`
+                let Br = document.getElementById('elem-70');
+                Br.innerHTML = `<p class="atom-num">1</p>
+                <h2>Br</h2>`
+                let I = document.getElementById('elem-88');
+                I.innerHTML = `<p class="atom-num">1</p>
+                <h2>I</h2>`
+                let At = document.getElementById('elem-106');
+                At.innerHTML = `<p class="atom-num">1</p>
+                <h2>At</h2>`
+                let Ts = document.getElementById('elem-124');
+                Ts.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ts</h2>`
+
+                //Noble gases
+                let He = document.getElementById('elem-17');
+                He.innerHTML = `<p class="atom-num">1</p>
+                <h2>He</h2>`
+                let Ne = document.getElementById('elem-35');
+                Ne.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ne</h2>`
+                let Ar = document.getElementById('elem-53');
+                Ar.innerHTML = `<p class="atom-num">1</p>
+                <h2>Ar</h2>`
+                let Kr = document.getElementById('elem-71');
+                Kr.innerHTML = `<p class="atom-num">1</p>
+                <h2>Kr</h2>`
+                let Xe = document.getElementById('elem-89');
+                Xe.innerHTML = `<p class="atom-num">1</p>
+                <h2>Xe</h2>`
+                let Rn = document.getElementById('elem-107');
+                Rn.innerHTML = `<p class="atom-num">1</p>
+                <h2>Rn</h2>`
+                let Og = document.getElementById('elem-125');
+                Og.innerHTML = `<p class="atom-num">1</p>
+                <h2>Og</h2>`
         </script>
     </body>
 </html>
